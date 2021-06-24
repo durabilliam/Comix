@@ -8,14 +8,14 @@ const useApplicationData = () => {
     loading: true,
   });
   useEffect(() => {
-    const comicvineUrl = `/api/${process.env.REACT_APP_API_KEY}/`;
+    const comicvineUrl = `/api/${process.env.REACT_APP_KEY}/`;
     
     Promise.all([
 
       
       axios.get(comicvineUrl,{
       headers: { 
-      'x-apikey': API_KEY,
+      //'x-apikey': API_KEY,
       "Access-Control-Allow-Origin": "*"  
       },
       crossdomain: true,
