@@ -8,19 +8,14 @@ const useApplicationData = () => {
     loading: true,
   });
   useEffect(() => {
-    const comicvineUrl = `https://comicvine.gamespot.com/api`
-    //const comicvineUrl = `https://comicvine.gamespot.com/api/allow-cors?api_key=75ba9b263df0ad5220aef3c1c8dbf897064f9116`
-    //const comicvineUrl = `https://comicvine.gamespot.com/api/?api_key=${key}&format=json&field_list=aliases,deck,description,first_appeared_in_issue,image,real_name,name,id,publisher&limit=1&offset=`;
-
+    const comicvineUrl = `/api/${process.env.REACT_APP_API_KEY}/`;
+    
     Promise.all([
-
-
-
 
       
       axios.get(comicvineUrl,{
       headers: { 
-      'x-apikey': '75ba9b263df0ad5220aef3c1c8dbf897064f9116',
+      'x-apikey': API_KEY,
       "Access-Control-Allow-Origin": "*"  
       },
       crossdomain: true,
