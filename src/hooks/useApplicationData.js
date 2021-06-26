@@ -8,22 +8,29 @@ const useApplicationData = () => {
     loading: true,
   });
   useEffect(() => {
-    const comicvineUrl = `/api/${process.env.REACT_APP_KEY}/`;
+    //const comicvineUrl = `/api/?${process.env.REACT_APP_KEY}/`;
+    const comicvineUrl = `/api/volumes/?api_key=${process.env.REACT_APP_KEY}&format=json&sort=name:asc&filter=name:Walking%20Dead`;
     
     Promise.all([
 
-      
-      axios.get(comicvineUrl,{
-      headers: { 
-      //'x-apikey': API_KEY,
-      "Access-Control-Allow-Origin": "*"  
-      },
-      crossdomain: true,
-      responseType: 'json'
-      }),
-    ]).then((all) => {console.log("XXXXX", all)
+      axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded',
+      axios.get(comicvineUrl, {withCredentials: true,}
+      // {mode: 'no-cors', 
+      // crossdomain: true,
+      // responseType: 'json'
+      //  },
+      // ,{
+      //headers: { 
+      // 'x-apikey': `${process.env.REACT_API_KEY}`,
+      //{"Access-Control-Allow-Origin": "*"}
+      //},
+      // crossdomain: true,
+      // responseType: 'json'
+      ),
+    ]).then((all) => {
+      console.log("XXXXX", all)
       dispatch({
-        headers: {"Access-Control-Allow-Origin": "*"},
+        
         type: SET_APPLICATION_DATA,
         tests: all[0].data,
       });
