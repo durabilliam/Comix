@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :api do
+    root 'home#index'
     resources :users
 
-    get '/get_comicvine' => "comicvine#get_comicvine"
+    get '/superheros' => "superheros#get_superheros"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
