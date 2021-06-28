@@ -1,29 +1,30 @@
 import {useEffect, useReducer} from 'react';
-import dataReducer, {SET_USERS} from '../reducer/data_reducer';
+import dataReducer, {SET_APPLICATION_DATA} from '../reducer/data_reducer';
 import axios from 'axios';
 
 const useApplicationData = () => {
-  const [state, dispatch] = useReducer(dataReducer, {
+    const [state, dispatch] = useReducer(dataReducer, {
       users: [],
+      superheros: [],
       loading: true,
-  });
-  useEffect(() => {
-      axios({
-              method: 'GET',
-              url: '/api/users',
-          })
-          .then(({
-              data
-          }) => {
-              console.log(data);
-              dispatch({
-                  type: SET_USERS,
-                  users: data
-              });
-          })
-          .catch((err) => console.log(err));
-  }, []);
-
+    });
+    useEffect(() => {
+      const usersUrl = '/api/users';
+      const superherosUrl = '/api/superheros';
+      Promise.all([
+        axios.get(usersUrl),
+        axios.get(superherosUrl),
+      ]).then((all) => {
+        dispatch({
+          type: SET_APPLICATION_DATA,
+          users: all[0].data,
+          superheros: all[1].data,
+        });
+      })
+        .catch((err) => console.log(err))
+      //},[]);
+      
+    }, []);
   return {
       state,
       dispatch,

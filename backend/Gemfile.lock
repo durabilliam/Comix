@@ -178,6 +178,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  dotenv
   dotenv-rails
   faker
   jbuilder (~> 2.0)
