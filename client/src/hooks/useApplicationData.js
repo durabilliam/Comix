@@ -5,7 +5,8 @@ import axios from 'axios';
 const useApplicationData = () => {
     const [state, dispatch] = useReducer(dataReducer, {
       users: [],
-      superheros: [],
+      //superheros: [],
+      comics: [],
       loading: true,
     });
     useEffect(() => {
@@ -18,7 +19,8 @@ const useApplicationData = () => {
         dispatch({
           type: SET_APPLICATION_DATA,
           users: all[0].data,
-          superheros: all[1].data,
+          //superheros: all[1].data,
+          comics: all[1].data
         });
       })
         .catch((err) => console.log(err))
