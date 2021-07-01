@@ -9,8 +9,8 @@ const App = () => {
   // console.log("WWWWW", state.superheros.image)
   //const superheroTemp = state.superheros.results
   const userList = state.users.map((user) => (<li key={user.id} > {user.first_name} {user.last_name} {user.email} </li>));
-  const comicList = state.comics.map((comic) => (<li key={comic.id} > {comic.title} {comic.issue} {comic.edition} </li>));
-  
+  const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
+  //const comicImage = state.comics.map((comic) => (<div className="comic-image"><img src={comic.image} className="comic-image" height="250" width="200"></img></div>));
   //const shname = (<li>{state.superheros.name}</li>);
   //const shimage = state.superheros.image.url
 
@@ -20,7 +20,8 @@ const App = () => {
     <h1> Users </h1>
 
     <ul> {userList} </ul>
-    <ul> {comicList} </ul>
+    <ul> {comixList} </ul>
+    {/* <ul> {comicImage} </ul> */}
 
     {/* <ul>{shname}</ul> */}
     {/* <ul>{shimage}</ul> */}

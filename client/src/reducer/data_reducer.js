@@ -7,7 +7,7 @@ const dataReducer = (state, action) => {
                 ...state,
                 users: action.users,
                 //superheros: action.superheros,
-                comics: action.comics,
+                comixs: action.comixs,
                 loading: false,
             };
         default:

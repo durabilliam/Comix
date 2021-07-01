@@ -6,21 +6,21 @@ const useApplicationData = () => {
     const [state, dispatch] = useReducer(dataReducer, {
       users: [],
       //superheros: [],
-      comics: [],
+      comixs: [],
       loading: true,
     });
     useEffect(() => {
       const usersUrl = '/api/users';
-      const superherosUrl = '/api/superheros';
+      const comixsUrl = '/api/comixs';
       Promise.all([
         axios.get(usersUrl),
-        axios.get(superherosUrl),
+        axios.get(comixsUrl),
       ]).then((all) => {
         dispatch({
           type: SET_APPLICATION_DATA,
           users: all[0].data,
           //superheros: all[1].data,
-          comics: all[1].data
+          comixs: all[1].data
         });
       })
         .catch((err) => console.log(err))

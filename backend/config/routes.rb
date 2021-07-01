@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root 'home#index'
     resources :users
 
-    get '/superheros' => "superheros#get_superheros"
+    get '/comixs' => "comixs#get_comixs"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
