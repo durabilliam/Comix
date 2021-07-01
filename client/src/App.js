@@ -1,32 +1,51 @@
 import './App.css';
 import useApplicationData from './hooks/useApplicationData';
+import Comix from './components/Comix'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, Component } from 'react';
 
-const App = () => {
-  const { state, dispatch } = useApplicationData();
-  console.log("XXXX", state)
-  //console.log("WWWWW", typeof(state.superheros.results))
-  // console.log("WWWWW", state.superheros.name)
-  // console.log("WWWWW", state.superheros.image)
-  //const superheroTemp = state.superheros.results
-  const userList = state.users.map((user) => (<li key={user.id} > {user.first_name} {user.last_name} {user.email} </li>));
-  const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
-  //const comicImage = state.comics.map((comic) => (<div className="comic-image"><img src={comic.image} className="comic-image" height="250" width="200"></img></div>));
-  //const shname = (<li>{state.superheros.name}</li>);
-  //const shimage = state.superheros.image.url
+class App extends Component {
 
-  //console.log("WWWWW", superheroTemp)
+  
+  
+  render() {
+    return (
+      
+      <div>
+        <Router>
+          <Switch>
+            {/* <BurgerNavbar /> */}
+            {/* <ul> {userList} </ul>
+            <ul> {extburgerList} </ul> */}
+            {/* <Route exact path='/' component={Home}/>
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/register' component={Register}/>
+            <Route exact path='/burgers' component={Burgers}/>
+            <Route exact path='/restaurants' component={Restaurants}/> */}
+            <Route exact path='/comixs/:id' component={Comix}/>
+            {/* <Route exact path='/restaurants/restaurant/:id/:lat/:long' component={Restaurant}/>
+            <Route exact path='/favourites' component={Favourites}/>
+            <Route exact path='/search' component={Searchbar}/>
+            <Route exact path='/about' component={About}/>
+            <Route exact path='/addBurger' component={AddBurger}/> */}
 
-  return (<div className="App" >
-    <h1> Users </h1>
+          </Switch>
+        </Router>
+      </div>
+    );
+  };
+}
+  // return (<div className="App" >
+  //   <h1> This is Home </h1>
 
-    <ul> {userList} </ul>
-    <ul> {comixList} </ul>
-    {/* <ul> {comicImage} </ul> */}
+  //   {/* <ul> {userList} </ul> */}
+  //   <ul> {comixList} </ul>
+  //   {/* <ul> {comicImage} </ul> */}
 
-    {/* <ul>{shname}</ul> */}
-    {/* <ul>{shimage}</ul> */}
-  </div >
-  );
-};
+  //   {/* <ul>{shname}</ul> */}
+  //   {/* <ul>{shimage}</ul> */}
+  // </div >
+  // );
+
 
 export default App;
