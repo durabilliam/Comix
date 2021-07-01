@@ -16,24 +16,30 @@ export default function Comix(props) {
   }
   const {
     title,
-    // restaurant,
-    // web,
-    // image,
-    // ingredients,
-    // isVegetarian,
-    // description,
-    // addresses,
-    // brand
+    issue,
+    edition,
+    Price,
+    Available,
+    image
   } = { ...ind_comix }
 
   const comixTitle = (<span>{title}</span>)
+  const comixIssue = (<span>{issue}</span>)
+  const comixEdition = (<span>{edition}</span>)
+  const comixPrice = (<span>{Price}</span>)
+  const comixAvailable = (<span>{Available}</span>)
+  const comixImage = (<div className="comix-image"><img src={image} className="comix-image1" height="400" width="375"></img></div>);
   //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
-  
+
   return (<div className="App" >
-    <h1> This is Individual </h1>
+    <h1> {comixTitle} </h1>
 
     {/* <ul> {userList} </ul> */}
-    <ul> {comixTitle} </ul>
+    <h3> Issue #:{comixIssue},    {comixEdition} Edition </h3>
+    <h4> {comixPrice} </h4>
+
+    <span>{comixImage}</span>
+
     {/* <ul> {comicImage} </ul> */}
 
     {/* <ul>{shname}</ul> */}
