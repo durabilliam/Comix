@@ -1,5 +1,6 @@
 import React, { useState, setState, useReducer, reset, useEffect } from "react";
 import axios from 'axios'
+import ComixsNavbar from './Navbar'
 import useApplicationData from '../hooks/useApplicationData'
 // import {
 //   UPDATE_FAVOURITE_DATA, UPDATE_COMMENT_DATA, UPDATE_LIKES_DATA
@@ -31,18 +32,27 @@ export default function Comix(props) {
   const comixPrice = (<span>{Price}</span>)
   const comixAvailable = (<span>{Available}</span>)
   const comixGrade = (<span>{Grade}</span>)
-  const comixQuantity = (<span>{quantity}</span>)
+  //const comixQuantity = (<span>{quantity}</span>)
   const comixImage = (<div className="comix-image"><img src={image} className="comix-image1" width="400"></img></div>);
   //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
+  
+  //let Xquantity = quantity - 1
+  let comixQuantity
+  if (quantity < 1) {
+    comixQuantity = (<span> SOLD OUT!!!</span>)
+  } else {
+    comixQuantity = (<span>{quantity}</span>)
+  }
 
   return (<div className="App" >
+    <ComixsNavbar />
     <h1> {comixTitle} </h1>
 
     {/* <ul> {userList} </ul> */}
     <h3> Issue #:{comixIssue},    {comixEdition} Edition </h3>
-    <h4> Price CAD {comixPrice} </h4>
+    <h4> Price CAD: {comixPrice} </h4>
     <h4> Approximate Grade: {comixGrade} </h4>
-    <h4> No. Available {comixQuantity} </h4>
+    <h4> No. Available: {comixQuantity} </h4>
     <span>{comixImage}</span>
 
     {/* <ul> {comicImage} </ul> */}
