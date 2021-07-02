@@ -1,9 +1,9 @@
 import React, { useState, setState, useReducer, reset, useEffect } from "react";
 import axios from 'axios'
 import useApplicationData from '../hooks/useApplicationData'
-import {
-  UPDATE_FAVOURITE_DATA, UPDATE_COMMENT_DATA, UPDATE_LIKES_DATA
-} from '../reducer/data_reducer';
+// import {
+//   UPDATE_FAVOURITE_DATA, UPDATE_COMMENT_DATA, UPDATE_LIKES_DATA
+// } from '../reducer/data_reducer';
 import { useParams } from "react-router-dom";
 
 export default function Comix(props) {
@@ -20,6 +20,8 @@ export default function Comix(props) {
     edition,
     Price,
     Available,
+    Grade,
+    quantity,
     image
   } = { ...ind_comix }
 
@@ -28,7 +30,9 @@ export default function Comix(props) {
   const comixEdition = (<span>{edition}</span>)
   const comixPrice = (<span>{Price}</span>)
   const comixAvailable = (<span>{Available}</span>)
-  const comixImage = (<div className="comix-image"><img src={image} className="comix-image1" height="400" width="375"></img></div>);
+  const comixGrade = (<span>{Grade}</span>)
+  const comixQuantity = (<span>{quantity}</span>)
+  const comixImage = (<div className="comix-image"><img src={image} className="comix-image1" width="400"></img></div>);
   //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
 
   return (<div className="App" >
@@ -36,8 +40,9 @@ export default function Comix(props) {
 
     {/* <ul> {userList} </ul> */}
     <h3> Issue #:{comixIssue},    {comixEdition} Edition </h3>
-    <h4> {comixPrice} </h4>
-
+    <h4> Price CAD {comixPrice} </h4>
+    <h4> Approximate Grade: {comixGrade} </h4>
+    <h4> No. Available {comixQuantity} </h4>
     <span>{comixImage}</span>
 
     {/* <ul> {comicImage} </ul> */}
