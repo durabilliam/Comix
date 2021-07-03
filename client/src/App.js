@@ -2,6 +2,7 @@ import './App.css';
 import useApplicationData from './hooks/useApplicationData';
 import Comix from './components/Comix'
 import Register from './components/Register';
+import Login from './components/Login'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState, Component } from 'react';
 
@@ -17,8 +18,8 @@ class App extends Component {
           <Switch>
             {/* <ul> {userList} </ul>
             <ul> {extburgerList} </ul> */}
-            {/* <Route exact path='/' component={Home}/>
-            <Route exact path='/login' component={Login}/> */}
+            {/* <Route exact path='/' component={Home}/> */}
+            <Route exact path='/login' component={Login}/>
             <Route exact path='/register' component={Register}/>
             {/* <Route exact path='/burgers' component={Burgers}/>
             <Route exact path='/restaurants' component={Restaurants}/> */}
