@@ -8,15 +8,15 @@ import axios from 'axios'
 
 
 export default function ComixsNavbar(props) {
-  // const userLogout = () => {
-  //   axios.post('/api/logout');
-  //   localStorage.clear();
-  //   window.location.href = '/login';
-  // }
+  const userLogout = () => {
+    axios.post('/api/logout');
+    localStorage.clear();
+    window.location.href = '/login';
+  }
 
-  // let user = localStorage.getItem('userObject');
-  // user = JSON.parse(user);
-  let user = 0
+  let user = localStorage.getItem('userObject');
+  user = JSON.parse(user);
+  //let user = 0
   if (!user) {
   return (
     <div>
@@ -42,7 +42,7 @@ export default function ComixsNavbar(props) {
               <div id="rightNav">
                 <a>Hungry for some 🍔 's {user.full_name}?</a>
                 {/* <a href={`/favourites`}><img src={favouriteStamp} className="favourite-image" height="25" width="50"></img></a> */}
-                {/* <a class="logout-button" onClick={userLogout}>Logout</a> */}
+                <a class="logout-button" onClick={userLogout}>Logout</a>
               </div>
             </Navbar>
         </div>
