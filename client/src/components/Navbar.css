@@ -1,0 +1,33 @@
+.logo {
+  font-size: 28px;
+  padding-left: 15px;
+}
+
+#rightNav {
+  display: flex;
+  justify-content: flex-end;
+  /* position: absolute; */
+  right: 15px;
+}
+
+#rightNav a{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: white;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+nav.navbar.navbar-expand.navbar-dark.bg-dark {
+  background-color: #353639ef;
+  border-top-width: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#logopic {
+  border-radius: 100px;
+}
+
+.logout-button {
+  cursor:pointer;
+}

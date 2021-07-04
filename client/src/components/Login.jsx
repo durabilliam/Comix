@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Component } from 'react'
 import {Link} from 'react-router-dom'
 import ComixsNavbar from './Navbar';
-//import './Login.css'
+import './Login.css'
 
 class Login extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class Login extends Component {
       }
       
       localStorage.setItem('userObject', JSON.stringify(user));
-      window.location.href = '/';
+      window.location.href = '/comixs/0';
 
       if (response.data.logged_in) {
         this.props.handleLogin(response.data)
