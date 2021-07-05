@@ -7,6 +7,7 @@ import useApplicationData from '../hooks/useApplicationData'
 // } from '../reducer/data_reducer';
 import { useParams } from "react-router-dom";
 
+
 export default function Comix(props) {
   const { state, dispatch } = useApplicationData();
   const { id } = useParams();
@@ -47,7 +48,6 @@ export default function Comix(props) {
   return (<div className="App" >
     <ComixsNavbar />
     <h1> {comixTitle} </h1>
-
     {/* <ul> {userList} </ul> */}
     <h3> Issue #:{comixIssue},    {comixEdition} Edition </h3>
     <h4> Price CAD: {comixPrice} </h4>

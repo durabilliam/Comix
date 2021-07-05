@@ -1,11 +1,20 @@
 .logo {
   font-size: 28px;
   padding-left: 15px;
+ 
+}
+
+
+#logopic {
+  border-radius: 25px;
+  width: 4em
+  
 }
 
 #rightNav {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   /* position: absolute; */
   right: 15px;
 }
@@ -15,6 +24,7 @@
   color: white;
   text-decoration: none;
   padding-right: 15px;
+  font-size: 0.8em;
 }
 
 nav.navbar.navbar-expand.navbar-dark.bg-dark {
@@ -22,11 +32,12 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark {
   border-top-width: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
-#logopic {
-  border-radius: 100px;
-}
 
 .logout-button {
   cursor:pointer;
