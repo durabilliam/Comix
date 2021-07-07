@@ -5,6 +5,7 @@ import axios from 'axios'
 import './Navbar.css'
 
 const Logo = require('../Images/Issue-252.png').default
+const Supes = require('../Images/superman.png').default
 
 
 export default function ComixsNavbar(props) {
@@ -24,6 +25,7 @@ export default function ComixsNavbar(props) {
         <Navbar.Brand href="/">
         <div className='logo'><img src={Logo} id='logopic' width="75em" /></div>
         </Navbar.Brand>
+        <div classname='supes'><img src={Supes} id='supes'/></div>
         <div id="rightNav">
           <Link to='/login'>Log In</Link>
           <br></br>
@@ -39,8 +41,10 @@ export default function ComixsNavbar(props) {
           <Navbar.Brand href="/">
           <div className='logo'><img src={Logo} id='logopic' width="75em" /></div>
           </Navbar.Brand>
+          <div classname='supes'><img src={Supes} id='supes'width="75em"/></div>
               <div id="rightNav">
                 <a>Thanks for Logging in {user.full_name}</a>
+                <br></br>
                 {/* <a href={`/favourites`}><img src={favouriteStamp} className="favourite-image" height="25" width="50"></img></a> */}
                 <a class="logout-button" onClick={userLogout}>Logout</a>
               </div>

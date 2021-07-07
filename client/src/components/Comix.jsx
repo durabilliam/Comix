@@ -6,6 +6,7 @@ import useApplicationData from '../hooks/useApplicationData'
 //   UPDATE_FAVOURITE_DATA, UPDATE_COMMENT_DATA, UPDATE_LIKES_DATA
 // } from '../reducer/data_reducer';
 import { useParams } from "react-router-dom";
+import './Comix.css'
 
 
 export default function Comix(props) {
@@ -34,7 +35,7 @@ export default function Comix(props) {
   const comixAvailable = (<span>{Available}</span>)
   const comixGrade = (<span>{Grade}</span>)
   //const comixQuantity = (<span>{quantity}</span>)
-  const comixImage = (<div className="comix-image"><img src={image} className="comix-image1" width="400"></img></div>);
+  const comixImage = (<div className="comix-image"><img src={image} className="comix-image1" width="300"></img></div>);
   //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
   
   //let Xquantity = quantity - 1
@@ -46,6 +47,9 @@ export default function Comix(props) {
   }
 
   return (<div className="App" >
+    <div className="page-background">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="NZACY53u"></script>
     <ComixsNavbar />
     <h1> {comixTitle} </h1>
     {/* <ul> {userList} </ul> */}
@@ -59,7 +63,8 @@ export default function Comix(props) {
 
     {/* <ul>{shname}</ul> */}
     {/* <ul>{shimage}</ul> */}
-  </div >
+    </div>
+    </div>
   );
   //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
   // const {

@@ -1,0 +1,7 @@
+.page-background {
+  background-image: url('../Images/comic_background_2.jpeg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
