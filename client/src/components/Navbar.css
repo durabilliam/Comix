@@ -43,11 +43,11 @@
 }
 
 #rightNav a{
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'M PLUS Rounded 1c', Marker Felt;
   color: white;
   text-decoration: none;
   padding-right: 15px;
-  font-size: 1 em;
+  font-size: 1.5em;
 }
 
 nav.navbar.navbar-expand.navbar-dark.bg-dark {

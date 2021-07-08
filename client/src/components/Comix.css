@@ -13,10 +13,36 @@
   /* transform: translate(-50%,-50%); */
   height: 100%;
   width: 100%;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  color: rgb(204, 199, 199);
-  text-decoration: none;
+  /* font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-decoration: none; */
+}
+
+.comix-image1 {
+  border-radius: 25px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   
 }
+
+.temp-comix-card {
+  margin:auto;
+  margin-bottom: 2.5em;
+  margin-top: 2.5em;
+  align-self: center;
+  width: 65%;
+  height: 525px;
+  background-color: rgb(34, 30, 30, 0.75);
+  border: 3px solid #212529;
+  border-radius: 75px;
+  color:#f3f5f7;
+  font-family: 'M PLUS Rounded 1c', Marker Felt;
+  font-weight:500;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+
 
 

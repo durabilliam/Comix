@@ -37,7 +37,7 @@ export default function Comix(props) {
   //const comixQuantity = (<span>{quantity}</span>)
   const comixImage = (<div className="comix-image"><img src={image} className="comix-image1" width="300"></img></div>);
   //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
-  
+
   //let Xquantity = quantity - 1
   let comixQuantity
   if (quantity < 1) {
@@ -48,47 +48,30 @@ export default function Comix(props) {
 
   return (<div className="App" >
     <div className="page-background">
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="NZACY53u"></script>
-    <ComixsNavbar />
-    <div className="color-overlay">
-    <h1> {comixTitle} </h1>
-    {/* <ul> {userList} </ul> */}
-    <h3> Issue #:{comixIssue},    {comixEdition} Edition </h3>
-    <h4> Price CAD: {comixPrice} </h4>
-    <h4> Approximate Grade: {comixGrade} </h4>
-    <h4> No. Available: {comixQuantity} </h4>
-    <span>{comixImage}</span>
-
-    {/* <ul> {comicImage} </ul> */}
-
-    {/* <ul>{shname}</ul> */}
-    {/* <ul>{shimage}</ul> */}
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="NZACY53u"></script>
+      <ComixsNavbar />
+      <div className="color-overlay">
+        <div className="temp-comix-card">
+          <div className="card-image">
+            <div>{comixImage}</div>
+          </div>
+          <div className="comix-card">
+            <div className="right-card">
+              <h1 className="comix-name">{comixTitle}</h1>
+              <h2 className="card-text"> Issue #: {comixIssue}, {comixEdition} Edition </h2>
+              <h3> Price CAD: {comixPrice} </h3>
+              <h3> Approximate Grade: {comixGrade} </h3>
+              <h3> No. Available: {comixQuantity} </h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
+  </div>
   );
-  //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
-  // const {
-  //   name,
-  //   restaurant,
-  //   web,
-  //   image,
-  //   ingredients,
-  //   isVegetarian,
-  //   description,
-  //   addresses,
-  //   brand
-  // } = { ...testburger }
 
-  // const burgerName = (<span>{name}</span>)
-  // const burgerRestaurant = (<a>{restaurant}</a>)
-  // const burgerIngredients = (<li key={id}> <p>{ingredients}</p></li>);
-  // const burgerDescription = (<p>{description}</p>);
-  // const burgerRestaurantWeb = (<a href={`${web}`}>{web}</a>);
-  // const burgerRestaurantBrand = (<a href={`${web}`}><img src={brand} width="100"></img></a>);
-  // const burgerImage = (<div className="burger-image"><img src={image} className="burger-image1" height="250" width="250"></img></div>);
-  // const burgerAddress = addresses.map((a) => (<address key={a.addressID}>{a.number} {a.line1}, {a.line2}, {a.postalCode}</address>));
+
 
   // let burgerType
   // if (isVegetarian) {
@@ -97,30 +80,6 @@ export default function Comix(props) {
   //   burgerType = <div></div>
   // }
 
-  // return (
-  //   <div className="page-background">
-  //     <div id="fb-root"></div>
-  //     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="NZACY53u"></script>
-  //     <BurgerNavbar />
-
-  //     <div className="temp-card-burger">
-  //       <div className="card-header">
-  //         <h1 className="burger-name">{burgerName}
-  //           {burgerType}
-  //         </h1>
-  //         {/* <table></table> */}
-  //       </div>
-  //       <div className="burger-card">
-  //         <span>
-  //           {burgerImage}
-  //         </span>
-  //         <div className="right-card">
-  //           <h4 className="card-text">
-  //             {burgerDescription}
-  //           </h4>
-  //           <h5>
-  //             {burgerIngredients}
-  //           </h5>
   //           <div className="like-dislike-burger">
   //             <div className="fav-button">
   //               {favouritesButton}
