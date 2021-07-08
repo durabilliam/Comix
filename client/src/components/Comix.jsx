@@ -51,6 +51,7 @@ export default function Comix(props) {
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="NZACY53u"></script>
     <ComixsNavbar />
+    <div className="color-overlay">
     <h1> {comixTitle} </h1>
     {/* <ul> {userList} </ul> */}
     <h3> Issue #:{comixIssue},    {comixEdition} Edition </h3>
@@ -63,6 +64,7 @@ export default function Comix(props) {
 
     {/* <ul>{shname}</ul> */}
     {/* <ul>{shimage}</ul> */}
+    </div>
     </div>
     </div>
   );

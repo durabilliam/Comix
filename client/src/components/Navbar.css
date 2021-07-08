@@ -27,11 +27,11 @@
   color: white;
   text-decoration: none;
   padding-right: 15px;
-  font-size: 0.8em;
+  font-size: 1 em;
 }
 
 nav.navbar.navbar-expand.navbar-dark.bg-dark {
-  background-color: #f3f5fc50;
+  background-color: hsl(229, 12%, 25%);
   border-top-width: 20px;
   padding-top: 10px;
   padding-bottom: 10px;

@@ -1,7 +1,22 @@
 .page-background {
-  background-image: url('../Images/comic_background_2.jpeg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.color-overlay {
+  background-image: url('https://lh3.googleusercontent.com/um8-_csxAalVuS4IJpbFzASq9yv9QXJM0ynsAJ5BJXKtd42fjJeg-_3JTYzSpx888eghvXf9oqroSKYbOULAes2wkj-2GGLgpCNQLXjAqWGbJDT5G-yCrJSnKIQbsgP8z-k_5fKNiQ=w2400');
+  transition: all 1s ease-in-out;
+  position: absolute;
+  z-index: auto;
+  /* transform: translate(-50%,-50%); */
+  height: 100%;
+  width: 100%;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: rgb(204, 199, 199);
+  text-decoration: none;
+  
+}
+
+
