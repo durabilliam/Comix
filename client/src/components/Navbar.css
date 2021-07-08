@@ -3,9 +3,29 @@
   padding-left: 15px;
  
 }
-#supes {
+
+#topNav {
   display: flex;
-  padding-right: 800px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+#publishers {
+  display: flex;
+}
+
+#supes {
+  padding-right: 25px;
+}
+#spidey {
+  padding-right: 25px;
+}
+#spawn {
+  padding-right: 25px;
+}
+#other {
+  padding-right: 900px;
 }
 
 #logopic {
