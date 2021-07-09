@@ -57,7 +57,7 @@ export default function ComixsNavbar(props) {
             <div classname='other'><img src={Other} id='other' height="100em"/></div>
           </div>
           <div id="rightNav">
-             <a>Thanks for Logging in {user.full_name}</a>
+             <a>Logged in as {user.full_name}</a>
              <br></br>
              {/* <a href={`/favourites`}><img src={favouriteStamp} className="favourite-image" height="25" width="50"></img></a> */}
              <a class="logout-button" onClick={userLogout}>Logout</a>

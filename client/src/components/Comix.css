@@ -16,21 +16,42 @@
   /* font-family: 'M PLUS Rounded 1c', sans-serif;
   text-decoration: none; */
 }
+.card-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
+}
 .comix-image1 {
+  margin-left: 2em;
   border-radius: 25px;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   
 }
 
+.pager{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn{
+
+  color:#f3f5f7;
+
+}
 .temp-comix-card {
+  position: absolute;
   margin:auto;
   margin-bottom: 2.5em;
   margin-top: 2.5em;
+  margin-left: 2.5em;
+  margin-right: 2.5em;
   align-self: center;
-  width: 65%;
-  height: 525px;
+  width: 90%;
+  height: 80%;
   background-color: rgb(34, 30, 30, 0.75);
   border: 3px solid #212529;
   border-radius: 75px;
@@ -38,9 +59,13 @@
   font-family: 'M PLUS Rounded 1c', Marker Felt;
   font-weight:500;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 
+}
+
+.comix-card{
+  margin-right: 2em;
 }
 
 

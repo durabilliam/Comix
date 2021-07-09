@@ -5,14 +5,16 @@ import useApplicationData from '../hooks/useApplicationData'
 // import {
 //   UPDATE_FAVOURITE_DATA, UPDATE_COMMENT_DATA, UPDATE_LIKES_DATA
 // } from '../reducer/data_reducer';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import './Comix.css'
+//import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function Comix(props) {
   const { state, dispatch } = useApplicationData();
   const { id } = useParams();
-  console.log("XXXX", state)
+  console.log("XXXX", state.comixs.length)
   const ind_comix = state.comixs.find(d => d.id == id)
   if (!ind_comix) {
     return null
@@ -39,6 +41,30 @@ export default function Comix(props) {
   //const comixList = state.comixs.map((comix) => (<li key={comix.id} > {comix.title} {comix.issue} {comix.edition} <img src={comix.image} height="150" width="125" alt="comic"></img> </li>));
 
   //let Xquantity = quantity - 1
+  let prevButton;
+  let nextButton;
+  const nid = Number(id)
+
+  let prevUrl = `/comixs/${nid - 1}`
+  let nextUrl = `/comixs/${nid + 1}`
+
+
+  if (nid === 0) {
+    prevButton = <div></div>
+  } else {
+    prevButton = <Link to={prevUrl}><button type="button" className="btn btn-light btn">Previous</button></Link>
+  };
+
+
+  if (nid === state.comixs.length - 1) {
+    nextButton = <div></div>
+  } else {
+    nextButton = <Link to={nextUrl}><button type="button" className="btn btn-light btn">Next</button></Link>
+  };
+
+
+
+
   let comixQuantity
   if (quantity < 1) {
     comixQuantity = (<span> SOLD OUT!!!</span>)
@@ -55,6 +81,10 @@ export default function Comix(props) {
         <div className="temp-comix-card">
           <div className="card-image">
             <div>{comixImage}</div>
+            <div className="pager">
+              {prevButton}
+              {nextButton}
+            </div>
           </div>
           <div className="comix-card">
             <div className="right-card">
