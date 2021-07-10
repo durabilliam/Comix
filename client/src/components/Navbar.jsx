@@ -30,13 +30,12 @@ export default function ComixsNavbar(props) {
         <Navbar.Brand href="/">
         <div className='logo'><img src={Logo} id='logopic' width="75em" /></div>
         </Navbar.Brand>
-        <div classname='supes'><img src={Supes} id='supes' height="100em"/></div>
-        <div classname='spidey'><img src={Spidey} id='spidey' height="100em"/></div>
-        <div classname='spawn'><img src={Spawn} id='spawn' height="100em"/></div>
-        <div classname='other'><img src={Other} id='other' height="100em"/></div>
+        <div classname='supes'><img src={Supes} id='supes' height="80em"/></div>
+        <div classname='spidey'><img src={Spidey} id='spidey' height="80em"/></div>
+        <div classname='spawn'><img src={Spawn} id='spawn' height="80em"/></div>
+        <div classname='other'><img src={Other} id='other' height="80em"/></div>
         <div id="rightNav">
           <Link to='/login'>Log In</Link>
-          <br></br>
           <Link to='/register'>Sign Up</Link>
         </div>
       </Navbar>
@@ -45,20 +44,19 @@ export default function ComixsNavbar(props) {
     else {
       return (
         <div>
-          <Navbar bg="dark" variant="dark">
+          <Navbar bg="dark" variant="dark" height="50px">
           <Navbar.Brand href="/">
           <div className='logo'><img src={Logo} id='logopic' width="75em" /></div>
           </Navbar.Brand>
           <div id="topNav">
           <div id="publishers">
-            <div classname='supes'><img src={Supes} id='supes' height="100em"/></div>
-            <div classname='spidey'><img src={Spidey} id='spidey' height="100em"/></div>
-            <div classname='spawn'><img src={Spawn} id='spawn' height="100em"/></div>
-            <div classname='other'><img src={Other} id='other' height="100em"/></div>
+            <div classname='supes'><img src={Supes} id='supes' height="80em"/></div>
+            <div classname='spidey'><img src={Spidey} id='spidey' height="80em"/></div>
+            <div classname='spawn'><img src={Spawn} id='spawn' height="80em"/></div>
+            <div classname='other'><img src={Other} id='other' height="80em"/></div>
           </div>
           <div id="rightNav">
              <a>Logged in as {user.full_name}</a>
-             <br></br>
              {/* <a href={`/favourites`}><img src={favouriteStamp} className="favourite-image" height="25" width="50"></img></a> */}
              <a class="logout-button" onClick={userLogout}>Logout</a>
           </div>
