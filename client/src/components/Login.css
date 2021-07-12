@@ -9,12 +9,12 @@
   padding-top: 175px;
 }
 
-/* .addLogin_background {
-  background: url("../Images/bugertime-login.jpeg");
+.addLogin_background {
+  background-image: url('https://lh3.googleusercontent.com/um8-_csxAalVuS4IJpbFzASq9yv9QXJM0ynsAJ5BJXKtd42fjJeg-_3JTYzSpx888eghvXf9oqroSKYbOULAes2wkj-2GGLgpCNQLXjAqWGbJDT5G-yCrJSnKIQbsgP8z-k_5fKNiQ=w2400');
   background-position: right;
   background-repeat:no-repeat;
   height: 900px;
-} */
+}
 
 .addloginfield{
 margin: 7px;

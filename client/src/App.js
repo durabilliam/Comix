@@ -1,6 +1,7 @@
 import './App.css';
 import useApplicationData from './hooks/useApplicationData';
 import Comix from './components/Comix'
+import Comixs from './components/Comixs'
 import Register from './components/Register';
 import Login from './components/Login'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -55,8 +56,7 @@ class App extends Component {
             {/* <Route exact path='/' component={Home}/> */}
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
-            {/* <Route exact path='/burgers' component={Burgers}/>
-            <Route exact path='/restaurants' component={Restaurants}/> */}
+            <Route exact path='/comixs' component={Comixs}/>
             <Route exact path='/comixs/:id' component={Comix} />
             {/* <Route exact path='/restaurants/restaurant/:id/:lat/:long' component={Restaurant}/>
             <Route exact path='/favourites' component={Favourites}/>
