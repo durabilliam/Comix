@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback  } from 'react'
 import useDebounce from "../hooks/useDebounce";
 import useApplicationData from '../hooks/useApplicationData'
-//import './Searchbar.css'
+import './Searchbar.css'
 
 export default function Searchbar(props) {
   const [value, setValue] = useState("");

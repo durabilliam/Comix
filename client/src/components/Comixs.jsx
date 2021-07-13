@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios'
 import Searchbar from './Searchbar'
 import Results from './Results'
+import './Comixs.css'
 
 export default function Comix(props) {
   const { state, dispatch } = useApplicationData();
@@ -19,7 +20,6 @@ export default function Comix(props) {
     axios.get(comixList).then(response => {
       setAllResults([...response.data])
       setResults([...response.data])
-      console.log("OVER HERE", ...response.data)
     });
   }, [])
 
@@ -36,15 +36,17 @@ export default function Comix(props) {
     }
   }, [term, dropDownFilter])
 
-  console.log ("OVER OVER HERE", results.title)
   const comixList = results.map(
-    (comix, index) => (
+    (comix) => (
       <div className='comix-container'>
         <a className='clickable-box' href={`/comixs/${comix.id}`}>
           <li className='comixs' href={`/comixs/${comix.id}`} key={`${comix.id}`}>
-            <img src={comix.image} height="100" width="100" alt="comix"></img>
-            <span>{comix.title}</span>
-            <a>{comix.issue}</a>
+            <img src={comix.image} width="100" alt="comix"></img>
+            <div className = 'box-title'>
+            <h4>{comix.title}</h4> 
+            <h4>#{comix.issue}</h4>
+            <h4>Price CAD: {comix.Price}</h4>
+            </div>
           </li>
         </a>
       </div>))
@@ -55,18 +57,20 @@ export default function Comix(props) {
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="NZACY53u"></script>
       <ComixsNavbar />
-      <div className='comix-top'>
-        <Searchbar onSearch={term => setTerm(term)} onDropDownChange={setDropDownFilter} />
-        <Results results={results} />
-        <h1 className='comixs-title'>Comixs</h1>
-      </div>
-      <div class="comixlist">
+      <div className="color-overlay">
+        <div className='comix-top'>
+          <Searchbar onSearch={term => setTerm(term)} onDropDownChange={setDropDownFilter} />
+          <Results results={results} />
+          <h1 className='comixs-title'>Comixs</h1>
+        </div>
+        <div class="comixlist">
           <section>
             <div className='comixs-list'>
               {comixList}
             </div>
           </section>
         </div>
+      </div>
     </div>
   </div>
   );

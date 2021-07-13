@@ -1,0 +1,76 @@
+.page-background {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.color-overlay {
+  background-image: url('https://lh3.googleusercontent.com/um8-_csxAalVuS4IJpbFzASq9yv9QXJM0ynsAJ5BJXKtd42fjJeg-_3JTYzSpx888eghvXf9oqroSKYbOULAes2wkj-2GGLgpCNQLXjAqWGbJDT5G-yCrJSnKIQbsgP8z-k_5fKNiQ=w2400');
+  transition: all 1s ease-in-out;
+  position: absolute;
+  z-index: auto;
+  /* transform: translate(-50%,-50%); */
+  height: 100%;
+  width: 100%;
+  /* font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-decoration: none; */
+}
+
+.comixs-list {
+  height: 789px;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+::-webkit-scrollbar {display:none;}
+
+.comixs-title {
+  color: white;
+  display: flex;
+  padding-left: 15px;
+  text-shadow: 3px 3px 6px #212529;
+}
+
+.comix-top{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-right: 5em;
+  padding-top: 1em;
+}
+
+.comixs:hover {
+  opacity: 1;
+}
+.clickable-box {
+  text-decoration: none;
+  color:#f3f5f7;
+  font-family: 'M PLUS Rounded 1c', Marker Felt;
+  font-weight:500;
+}
+
+.comixs {
+  display: flex;
+  align-items: center;
+  margin: 2em;
+  justify-content: space-between;
+  border: 3px solid #212529;
+  border-radius: 15px;
+  padding:2em;
+  background-color: rgb(34, 30, 30, 0.75);
+  opacity: 0.9;
+  width: 30em;
+  height: 15em;
+}
+
+.box-title{
+  display: flex;
+  padding-right: 2em;
+  flex-direction: column;
+}
+.comix-name {
+  display: flex;
+  justify-content: center;
+}
