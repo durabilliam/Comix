@@ -44,7 +44,7 @@ class Register extends Component {
       }
 
       localStorage.setItem('userObject', JSON.stringify(user));
-      window.location.href = '/';
+      window.location.href = '/comixs';
 
       console.log('response in regiser:', response)
       if (response.data.status === 'created') {
