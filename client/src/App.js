@@ -4,6 +4,7 @@ import Comix from './components/Comix'
 import Comixs from './components/Comixs'
 import Register from './components/Register';
 import Login from './components/Login'
+import Userpile from './components/Userpile'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState, Component } from 'react';
 import axios from 'axios'
@@ -58,6 +59,7 @@ class App extends Component {
             <Route exact path='/register' component={Register} />
             <Route exact path='/comixs' component={Comixs}/>
             <Route exact path='/comixs/:id' component={Comix} />
+            <Route exact path='/userpile' component={Userpile} />
             {/* <Route exact path='/restaurants/restaurant/:id/:lat/:long' component={Restaurant}/>
             <Route exact path='/favourites' component={Favourites}/>
             <Route exact path='/search' component={Searchbar}/>

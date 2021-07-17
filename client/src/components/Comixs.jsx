@@ -7,7 +7,7 @@ import Searchbar from './Searchbar'
 import Results from './Results'
 import './Comixs.css'
 
-export default function Comix(props) {
+export default function Comixs(props) {
   const { state, dispatch } = useApplicationData();
   const { id } = useParams();
   const [results, setResults] = useState([]);

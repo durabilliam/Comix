@@ -9,6 +9,7 @@ const dataReducer = (state, action) => {
                 users: action.users,
                 //superheros: action.superheros,
                 comixs: action.comixs,
+                carts: action.carts,
                 loading: false,
             };
         default:

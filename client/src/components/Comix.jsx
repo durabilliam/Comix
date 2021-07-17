@@ -19,7 +19,9 @@ export default function Comix(props) {
 
   let addToCartButton
   //let favouriteImage
+
   let user = localStorage.getItem('userObject');
+  console.log("USER", user)
   if (!user) {
     console.log("i'm null")
   } else {
@@ -29,13 +31,16 @@ export default function Comix(props) {
     if (user.id) {
       console.log("logged IN user id", user_id,"comix id", comix_id)
     }
-    console.log("state", state)
+
+   
     const usercart = state.carts.find(d => d.user_id == user_id && d.comix_id == id)
+    const comixsold = state.carts.find(d => d.comix_id == id)
+
     const handleClick = (event) => {
       console.log("I FIRED")
       event.preventDefault()
       if (usercart) {
-        console.log("already in Cart")
+        console.log("already in Comix Stack")
       } else {
         let cart = {
           user_id: user_id,
@@ -45,9 +50,9 @@ export default function Comix(props) {
           .then(response => {
             dispatch({
               type: UPDATE_CART_DATA,
-              favourites: response.data.cart
+              carts: response.data.cart
             })
-            //window.location.href = '/favourites';
+            window.location.href = '/userpile';
           })
           .catch(error => console.log('api errors:', error))
       }
@@ -57,7 +62,7 @@ export default function Comix(props) {
     if (usercart) {
       addToCartButton = <div></div>
     } else if (user) {
-      addToCartButton = <button onClick={handleClick} type="carts-button" className="btn btn-primary btn-sm">Add to Cart!!</button>
+      addToCartButton = <button onClick={handleClick} id="cart" type="button" className="btn btn-danger btn">Add to Comixs Pile!!</button>
     } else addToCartButton = <div></div>
 
   //   if (userfavs) {
@@ -120,12 +125,19 @@ export default function Comix(props) {
 
 
 
-
+  const comixsold = state.carts.find(d => d.comix_id == id)
   let comixQuantity
-  if (quantity < 1) {
+  let noOfComixs
+  if (comixsold){
+      noOfComixs = quantity -1
+  } else {
+      noOfComixs = quantity
+  }
+
+  if (noOfComixs < 1) {
     comixQuantity = (<span> SOLD OUT!!!</span>)
   } else {
-    comixQuantity = (<span>{quantity}</span>)
+    comixQuantity = (<span>Number in Stock {noOfComixs}</span>)
   }
 
   return (<div className="App" >
@@ -148,7 +160,7 @@ export default function Comix(props) {
               <h2 className="card-text"> Issue #: {comixIssue}, {comixEdition} Edition </h2>
               <h3> Price CAD: {comixPrice} </h3>
               <h3> Approximate Grade: {comixGrade} </h3>
-              <h3> No. Available: {comixQuantity} </h3>
+              <h3> {comixQuantity} </h3>
               <div>
                 {addToCartButton}
               </div>
