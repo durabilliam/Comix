@@ -10,7 +10,7 @@ require('faker')
 puts "Re-creating Fake Users ..."
 
 User.destroy_all
-#Favourite.destroy_all
+Cart.destroy_all
 #Comment.destroy_all
 #NewBurger.destroy_all
 #Burgerlike.destroy_all
@@ -18,3 +18,7 @@ User.destroy_all
 3.times do
   User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password_digest: Faker::Internet.password)
 end
+
+puts "Adding Fake Favourites"
+
+carts = Cart.create([{user_id: 2, comix_id: 9999}]) 

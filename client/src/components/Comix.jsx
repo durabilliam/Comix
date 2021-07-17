@@ -5,6 +5,7 @@ import useApplicationData from '../hooks/useApplicationData'
 // import {
 //   UPDATE_FAVOURITE_DATA, UPDATE_COMMENT_DATA, UPDATE_LIKES_DATA
 // } from '../reducer/data_reducer';
+import { UPDATE_CART_DATA } from '../reducer/data_reducer'
 import { useParams, Link } from "react-router-dom";
 import './Comix.css'
 //import Button from 'react-bootstrap/Button';
@@ -14,7 +15,63 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Comix(props) {
   const { state, dispatch } = useApplicationData();
   const { id } = useParams();
-  console.log("XXXX", state.comixs.length)
+  const comix_id = id;
+
+  let addToCartButton
+  //let favouriteImage
+  let user = localStorage.getItem('userObject');
+  if (!user) {
+    console.log("i'm null")
+  } else {
+    user = JSON.parse(user);
+    const comix_id = id;
+    const user_id = user.id;
+    if (user.id) {
+      console.log("logged IN user id", user_id,"comix id", comix_id)
+    }
+    console.log("state", state)
+    //const usercart = state.carts.find(d => d.user_id == user_id && d.comix_id == id)
+    const usercart = 1
+    const handleClick = (event) => {
+      console.log("I FIRED")
+      event.preventDefault()
+      if (usercart) {
+        console.log("already in Cart")
+      } else {
+        let cart = {
+          user_id: user_id,
+          comix_id: id
+        }
+        axios.post('/api/carts', { cart })
+          .then(response => {
+            dispatch({
+              type: UPDATE_CART_DATA,
+              favourites: response.data.cart
+            })
+            //window.location.href = '/favourites';
+          })
+          .catch(error => console.log('api errors:', error))
+      }
+    };  
+  
+
+    if (usercart) {
+      addToCartButton = <div></div>
+    } else if (user) {
+      addToCartButton = <button onClick={handleClick} type="carts-button" className="btn btn-primary btn-sm">Add to Cart!!</button>
+    } else addToCartButton = <div></div>
+
+  //   if (userfavs) {
+  //     favouriteImage = (<a href={`/favourites`}><img src={favouriteStamp} className="favourite-image" height="50" width="100"></img></a>)
+  //   } else {
+  //     favouriteImage = <div></div>
+  //   }
+
+  };
+
+
+
+
   const ind_comix = state.comixs.find(d => d.id == id)
   if (!ind_comix) {
     return null
@@ -93,6 +150,9 @@ export default function Comix(props) {
               <h3> Price CAD: {comixPrice} </h3>
               <h3> Approximate Grade: {comixGrade} </h3>
               <h3> No. Available: {comixQuantity} </h3>
+              <div>
+                {addToCartButton}
+              </div>
             </div>
           </div>
         </div>

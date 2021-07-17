@@ -1,4 +1,5 @@
 export const SET_APPLICATION_DATA = 'SET_APPLICATION_DATA';
+export const UPDATE_CART_DATA = 'UPDATE_CART_DATA';
 
 const dataReducer = (state, action) => {
     switch (action.type) {
@@ -12,6 +13,12 @@ const dataReducer = (state, action) => {
             };
         default:
             return state;
+        case UPDATE_CART_DATA:
+            return {
+                ...state,
+                carts: [...state.carts, action.carts],
+                loading: false,
+            };
     }
 };
 
