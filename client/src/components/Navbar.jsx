@@ -27,7 +27,7 @@ export default function ComixsNavbar(props) {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/comixs">
         <div className='logo'><img src={Logo} id='logopic' width="75em" /></div>
         </Navbar.Brand>
         <div classname='supes'><img src={Supes} id='supes' height="80em"/></div>
@@ -45,7 +45,7 @@ export default function ComixsNavbar(props) {
       return (
         <div>
           <Navbar bg="dark" variant="dark" height="50px">
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/comixs">
           <div className='logo'><img src={Logo} id='logopic' width="75em" /></div>
           </Navbar.Brand>
           <div id="topNav">

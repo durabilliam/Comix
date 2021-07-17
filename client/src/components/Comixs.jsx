@@ -61,7 +61,7 @@ export default function Comix(props) {
         <div className='comix-top'>
           <Searchbar onSearch={term => setTerm(term)} onDropDownChange={setDropDownFilter} />
           <Results results={results} />
-          <h1 className='comixs-title'>Comixs</h1>
+          <h1 className='comixs-title'>Comic List</h1>
         </div>
         <div class="comixlist">
           <section>

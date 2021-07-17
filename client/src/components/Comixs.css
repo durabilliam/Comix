@@ -43,6 +43,7 @@
 
 .comixs:hover {
   opacity: 1;
+  color: #c2c3c4;
 }
 .clickable-box {
   text-decoration: none;
@@ -57,12 +58,12 @@
   margin: 2em;
   justify-content: space-between;
   border: 3px solid #212529;
-  border-radius: 15px;
-  padding:2em;
+  border-radius: 25px;
+  padding:1em;
   background-color: rgb(34, 30, 30, 0.75);
   opacity: 0.9;
-  width: 30em;
-  height: 15em;
+  width: 27em;
+  height: 11em;
 }
 
 .box-title{

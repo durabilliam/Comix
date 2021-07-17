@@ -1,16 +1,18 @@
-/* #selUser {
+#selUser {
   text-decoration: none;
-  color: white;
+  color: rgb(247, 4, 214);
   font-family: 'M PLUS Rounded 1c', Marker Felt;
   font-weight:500;
   background: none;
   border: none;
   outline: none;
   flex-direction: row-reverse;
-} */
+  border-radius: 75em;
+}
 
-/* #comix-searchbar{
+#comix-searchbar{
   display: flex;
+  border-radius: 75em;
   flex-direction: column;
   justify-content: right;
-} */
+}

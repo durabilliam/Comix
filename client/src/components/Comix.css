@@ -59,13 +59,17 @@
   font-family: 'M PLUS Rounded 1c', Marker Felt;
   font-weight:500;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
 
 }
 
 .comix-card{
   margin-right: 2em;
+}
+
+.right-card{
+  padding-left: 4em;
 }
 
 
