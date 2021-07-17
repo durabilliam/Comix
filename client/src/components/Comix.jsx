@@ -30,8 +30,7 @@ export default function Comix(props) {
       console.log("logged IN user id", user_id,"comix id", comix_id)
     }
     console.log("state", state)
-    //const usercart = state.carts.find(d => d.user_id == user_id && d.comix_id == id)
-    const usercart = 1
+    const usercart = state.carts.find(d => d.user_id == user_id && d.comix_id == id)
     const handleClick = (event) => {
       console.log("I FIRED")
       event.preventDefault()
