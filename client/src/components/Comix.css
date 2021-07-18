@@ -41,6 +41,11 @@
   color:#f3f5f7;
 }
 
+#soldout {
+  color:#f10707;
+  font-size: 3.5em;
+  font-weight: 900;
+}
 .temp-comix-card {
   position: absolute;
   margin:auto;

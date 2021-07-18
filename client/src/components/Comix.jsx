@@ -28,6 +28,7 @@ export default function Comix(props) {
     user = JSON.parse(user);
     const comix_id = id;
     const user_id = user.id;
+
     if (user.id) {
       console.log("logged IN user id", user_id,"comix id", comix_id)
     }
@@ -135,9 +136,9 @@ export default function Comix(props) {
   }
 
   if (noOfComixs < 1) {
-    comixQuantity = (<span> SOLD OUT!!!</span>)
+    comixQuantity = (<div id="soldout"> SOLD OUT!!!</div>)
   } else {
-    comixQuantity = (<span>Number in Stock {noOfComixs}</span>)
+    comixQuantity = (<div>Number in Stock: {noOfComixs}</div>)
   }
 
   return (<div className="App" >
