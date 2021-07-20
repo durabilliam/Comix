@@ -16,8 +16,11 @@ export default function Userpile(props) {
   }
   
   
-  let userPrices = userComixsList.map(comix => comix.Price)
+  let userPrices = userComixsList.map(comix => Number((comix.Price).replace('$','')))
+  let totalCost = userPrices.reduce((a, b) => a + b, 0)
   console.log("here", userPrices)
+  console.log("here2", totalCost)
+
 
 
   const userComixList = userComixsList.map(
@@ -50,6 +53,10 @@ export default function Userpile(props) {
               {userComixList}
             </div>
           </section>
+          <div font-size="20px">
+            ${userPrices}.00
+            ${totalCost}.00
+          </div>
         </div>
       </div>
     </div>
