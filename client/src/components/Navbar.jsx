@@ -30,7 +30,7 @@ export default function ComixsNavbar(props) {
         <Navbar.Brand href="/comixs">
         <div className='logo'><img src={Logo} id='logopic' width="75em" /></div>
         </Navbar.Brand>
-        <div classname='supes'><img src={Supes} id='supes' height="80em"/></div>
+        <Link to='/userpile'><div classname='supes'><img src={Supes} id='supes' height="80em"/></div></Link>
         <div classname='spidey'><img src={Spidey} id='spidey' height="80em"/></div>
         <div classname='spawn'><img src={Spawn} id='spawn' height="80em"/></div>
         <div classname='other'><img src={Other} id='other' height="80em"/></div>
@@ -50,7 +50,7 @@ export default function ComixsNavbar(props) {
           </Navbar.Brand>
           <div id="topNav">
           <div id="publishers">
-            <div classname='supes'><img src={Supes} id='supes' height="80em"/></div>
+          <Link to='/userpile'><div classname='supes'><img src={Supes} id='supes' height="80em"/></div></Link>
             <div classname='spidey'><img src={Spidey} id='spidey' height="80em"/></div>
             <div classname='spawn'><img src={Spawn} id='spawn' height="80em"/></div>
             <div classname='other'><img src={Other} id='other' height="80em"/></div>
