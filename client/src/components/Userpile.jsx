@@ -45,6 +45,7 @@ export default function Userpile(props) {
               <tr>
                 <th>Title</th>
                 <th>Issue</th>
+                <th></th>
                 <th>Price $CAD</th>
               </tr>
               {userComixsList.map(
@@ -52,6 +53,7 @@ export default function Userpile(props) {
               <tr>
                 <td>{comix.title}</td>
                 <td>#{comix.issue}</td>
+                <td><img src={comix.image} width="75" alt="comix"></img></td>
                 <td>{comix.Price}</td>
               </tr>))}
             </table>

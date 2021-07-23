@@ -76,10 +76,15 @@
   justify-content: center;
 }
 
+.comixlist{
+  display: flex;
+}
+
 table {
   width: 25%;
   border-collapse: collapse;
   font-family: 'M PLUS Rounded 1c', Marker Felt;
+  font-size: 1.2em;
   }
 
   table, td, th {
