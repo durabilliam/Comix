@@ -1,6 +1,7 @@
 import React from 'react'
 import ComixsNavbar from './Navbar'
 import useApplicationData from '../hooks/useApplicationData'
+import "./Userpile.css"
 
 export default function Userpile(props) {
   const { state, dispatch } = useApplicationData();
@@ -14,9 +15,9 @@ export default function Userpile(props) {
   for (let i = 0; i < userComixsId.length; i++) {
     userComixsList.push(state.comixs.find(res => res.id == userComixsId[i]))
   }
-  
-  
-  let userPrices = userComixsList.map(comix => Number((comix.Price).replace('$','')))
+
+
+  let userPrices = userComixsList.map(comix => Number((comix.Price).replace('$', '')))
   let totalCost = userPrices.reduce((a, b) => a + b, 0)
   console.log("here", userPrices)
   console.log("here2", totalCost)
@@ -36,8 +37,44 @@ export default function Userpile(props) {
             </div>
           </li>
         </a>
-      </div>))
-  
+      </div>));
+
+  const userTableList = 
+          <div>
+            <table>
+              <tr>
+                <th>Title</th>
+                <th>Issue</th>
+                <th>Price $CAD</th>
+              </tr>
+              {userComixsList.map(
+                (comix) => (
+              <tr>
+                <td>{comix.title}</td>
+                <td>#{comix.issue}</td>
+                <td>{comix.Price}</td>
+              </tr>))}
+            </table>
+          </div>
+
+// const userTableList =  userComixsList.map(
+//   (comix) => (
+//     <div>
+//           <table>
+//             <tr>
+//               <th>Title</th>
+//               <th>Issue</th>
+//               <th>Price $CAD</th>
+//             </tr>
+//             <tr>
+//               <td>{comix.title}</td>
+//               <td>#{comix.issue}</td>
+//               <td>{comix.Price}</td>
+//             </tr>
+//           </table>
+//         </div>));
+
+
   return (<div className="App" >
     <div className="page-background">
       <div id="fb-root"></div>
@@ -53,8 +90,10 @@ export default function Userpile(props) {
               {userComixList}
             </div>
           </section>
+          <div>
+          {userTableList}
+          </div>
           <div font-size="20px">
-            ${userPrices}.00
             ${totalCost}.00
           </div>
         </div>

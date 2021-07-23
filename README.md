@@ -19,4 +19,5 @@
 * React 17.0
 * Google Map React 2.1.9
 * Bootstrap 5.0.1
+* Node 14.17.3
 
