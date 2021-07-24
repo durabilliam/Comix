@@ -16,13 +16,13 @@ export default function Userpile(props) {
     userComixsList.push(state.comixs.find(res => res.id == userComixsId[i]))
   }
 
-
+  let userCount = userComixsList.length
   let userPrices = userComixsList.map(comix => Number((comix.Price).replace('$', '')))
   let totalCost = userPrices.reduce((a, b) => a + b, 0)
   console.log("here", userPrices)
   console.log("here2", totalCost)
 
-
+  console.log("total number of comics", userCount)
 
   const userComixList = userComixsList.map(
     (comix) => (
@@ -39,42 +39,48 @@ export default function Userpile(props) {
         </a>
       </div>));
 
-  const userTableList = 
-          <div>
-            <table>
-              <tr>
-                <th>Title</th>
-                <th>Issue</th>
-                <th></th>
-                <th>Price $CAD</th>
-              </tr>
-              {userComixsList.map(
-                (comix) => (
-              <tr>
-                <td>{comix.title}</td>
-                <td>#{comix.issue}</td>
-                <td><img src={comix.image} width="75" alt="comix"></img></td>
-                <td>{comix.Price}</td>
-              </tr>))}
-            </table>
-          </div>
+  const userTableList =
+    <div>
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Issue</th>
+          <th>Cover</th>
+          <th>Price $CAD</th>
+        </tr>
+        {userComixsList.map(
+          (comix) => (
+            <tr>
+              <td>{comix.title}</td>
+              <td>#{comix.issue}</td>
+              <td><img src={comix.image} width="50" alt="comix"></img></td>
+              <td>{comix.Price}</td>
+            </tr>))}
+      </table>
+    </div>
 
-// const userTableList =  userComixsList.map(
-//   (comix) => (
-//     <div>
-//           <table>
-//             <tr>
-//               <th>Title</th>
-//               <th>Issue</th>
-//               <th>Price $CAD</th>
-//             </tr>
-//             <tr>
-//               <td>{comix.title}</td>
-//               <td>#{comix.issue}</td>
-//               <td>{comix.Price}</td>
-//             </tr>
-//           </table>
-//         </div>));
+  
+
+
+
+
+
+  // const userTableList =  userComixsList.map(
+  //   (comix) => (
+  //     <div>
+  //           <table>
+  //             <tr>
+  //               <th>Title</th>
+  //               <th>Issue</th>
+  //               <th>Price $CAD</th>
+  //             </tr>
+  //             <tr>
+  //               <td>{comix.title}</td>
+  //               <td>#{comix.issue}</td>
+  //               <td>{comix.Price}</td>
+  //             </tr>
+  //           </table>
+  //         </div>));
 
 
   return (<div className="App" >
@@ -86,19 +92,30 @@ export default function Userpile(props) {
         <div className='comix-top'>
           <h1 className='comixs-title'>{user.full_name}'s Comic Cart</h1>
         </div>
-        <div class="comixlist">
+        {/* <div class="comixlist">
           <section>
             <div className='comixs-list'>
               {userComixList}
             </div>
-          </section>
-          <div>
+          </section> */}
+        <div className="comix-tables">
           {userTableList}
-          </div>
-          <div font-size="20px">
-            ${totalCost}.00
+          <div className="total-cost">
+            <table>
+            {userCount > 1 ? (
+              <th>Subtotal for {userCount} items: ($CAD)</th>
+            ) : (
+              <th>Subtotal for {userCount} item: ($CAD)</th>
+            )};
+            <tr>
+              <td>
+                ${totalCost}.00
+              </td>
+            </tr>
+            </table>
           </div>
         </div>
+        {/* </div> */}
       </div>
     </div>
   </div>
