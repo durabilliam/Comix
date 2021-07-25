@@ -52,20 +52,12 @@ class App extends Component {
       <div>
         <Router>
           <Switch>
-            {/* <ul> {userList} </ul>
-            <ul> {extburgerList} </ul> */}
             {/* <Route exact path='/' component={Home}/> */}
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/comixs' component={Comixs}/>
             <Route exact path='/comixs/:id' component={Comix} />
             <Route exact path='/userpile' component={Userpile} />
-            {/* <Route exact path='/restaurants/restaurant/:id/:lat/:long' component={Restaurant}/>
-            <Route exact path='/favourites' component={Favourites}/>
-            <Route exact path='/search' component={Searchbar}/>
-            <Route exact path='/about' component={About}/>
-            <Route exact path='/addBurger' component={AddBurger}/> */}
-
           </Switch>
         </Router>
       </div>
