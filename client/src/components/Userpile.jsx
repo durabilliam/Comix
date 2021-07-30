@@ -21,7 +21,7 @@ export default function Userpile(props) {
   let comixCost = userPrices.reduce((a, b) => a + b, 0)
 
   let shippingCost
-  if(userCount >= 3){
+  if(userCount <= 3){
     shippingCost = 8
   } else if (userCount > 3 && userCount <=6){
     shippingCost = 16
@@ -34,18 +34,19 @@ export default function Userpile(props) {
   }
 
   let shippingMethod
-  if(userCount >= 3){
+  if(userCount <= 3){
     shippingMethod = "--1 LetterMail Envelope"
   } else if (userCount > 3 && userCount <=6){
-    shippingCost =  "--2 LetterMail Envelope"
+    shippingMethod =  "--2 LetterMail Envelope"
   } else if (userCount > 6 && userCount <=14){
-    shippingCost = "--1 Small Tracked Box"
+    shippingMethod = "--1 Small Tracked Box"
   } else if (userCount > 14 && userCount <= 25){
-    shippingCost = "--1 Medium Tracked Box"
+    shippingMethod = "--1 Medium Tracked Box"
   } else {
-    shippingCost = "--1 Large Tracked Box"
+    shippingMethod = "--1 Large Tracked Box"
   }
 
+  let totalCost = comixCost + shippingCost
   console.log("here", userPrices)
   console.log("here2", comixCost)
 
@@ -73,7 +74,7 @@ export default function Userpile(props) {
           <th>Title</th>
           <th>Issue</th>
           <th>Cover</th>
-          <th>Price $CAD</th>
+          <th>Price ($CAD)</th>
         </tr>
         {userComixsList.map(
           (comix) => (
@@ -103,12 +104,6 @@ export default function Userpile(props) {
         <div className='comix-top'>
           <h1 className='comixs-title'>{user.full_name}'s Comic Cart</h1>
         </div>
-        {/* <div class="comixlist">
-          <section>
-            <div className='comixs-list'>
-              {userComixList}
-            </div>
-          </section> */}
         <div className="comix-tables">
           {userTableList}
           <div className="total-cost">
@@ -126,6 +121,10 @@ export default function Userpile(props) {
             <tr>
               <td>Shipping for {userCount} books {shippingMethod}</td>
               <td>${shippingCost}.00</td>
+            </tr>
+             <tr>
+              <td>Total Cost:</td>
+              <td>${totalCost}.00</td>
             </tr>
             </table>
           </div>
