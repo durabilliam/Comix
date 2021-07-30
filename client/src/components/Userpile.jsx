@@ -18,9 +18,36 @@ export default function Userpile(props) {
 
   let userCount = userComixsList.length
   let userPrices = userComixsList.map(comix => Number((comix.Price).replace('$', '')))
-  let totalCost = userPrices.reduce((a, b) => a + b, 0)
+  let comixCost = userPrices.reduce((a, b) => a + b, 0)
+
+  let shippingCost
+  if(userCount >= 3){
+    shippingCost = 8
+  } else if (userCount > 3 && userCount <=6){
+    shippingCost = 16
+  } else if (userCount > 6 && userCount <=14){
+    shippingCost = 22
+  } else if (userCount > 14 && userCount <= 25){
+    shippingCost = 27
+  } else {
+    shippingCost = 35
+  }
+
+  let shippingMethod
+  if(userCount >= 3){
+    shippingMethod = "--1 LetterMail Envelope"
+  } else if (userCount > 3 && userCount <=6){
+    shippingCost =  "--2 LetterMail Envelope"
+  } else if (userCount > 6 && userCount <=14){
+    shippingCost = "--1 Small Tracked Box"
+  } else if (userCount > 14 && userCount <= 25){
+    shippingCost = "--1 Medium Tracked Box"
+  } else {
+    shippingCost = "--1 Large Tracked Box"
+  }
+
   console.log("here", userPrices)
-  console.log("here2", totalCost)
+  console.log("here2", comixCost)
 
   console.log("total number of comics", userCount)
 
@@ -65,22 +92,6 @@ export default function Userpile(props) {
 
 
 
-  // const userTableList =  userComixsList.map(
-  //   (comix) => (
-  //     <div>
-  //           <table>
-  //             <tr>
-  //               <th>Title</th>
-  //               <th>Issue</th>
-  //               <th>Price $CAD</th>
-  //             </tr>
-  //             <tr>
-  //               <td>{comix.title}</td>
-  //               <td>#{comix.issue}</td>
-  //               <td>{comix.Price}</td>
-  //             </tr>
-  //           </table>
-  //         </div>));
 
 
   return (<div className="App" >
@@ -102,15 +113,19 @@ export default function Userpile(props) {
           {userTableList}
           <div className="total-cost">
             <table>
-            {userCount > 1 ? (
-              <th>Subtotal for {userCount} items: ($CAD)</th>
-            ) : (
-              <th>Subtotal for {userCount} item: ($CAD)</th>
-            )};
+              <th>Description</th>
+              <th>Price ($CAD)</th>
             <tr>
-              <td>
-                ${totalCost}.00
-              </td>
+            {userCount > 1 ? (
+              <td>Subtotal for {userCount} items:</td>
+            ) : (
+              <td>Subtotal for {userCount} item:</td>
+            )}
+              <td>${comixCost}.00</td>
+            </tr>
+            <tr>
+              <td>Shipping for {userCount} books {shippingMethod}</td>
+              <td>${shippingCost}.00</td>
             </tr>
             </table>
           </div>
