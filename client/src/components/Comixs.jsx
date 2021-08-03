@@ -9,7 +9,7 @@ import './Comixs.css'
 
 export default function Comixs(props) {
   const { state, dispatch } = useApplicationData();
-  const { id } = useParams();
+  // const { id } = useParams();
   const [results, setResults] = useState([]);
   const [allResults, setAllResults] = useState([]);
   const [term, setTerm] = useState("");
@@ -35,6 +35,29 @@ export default function Comixs(props) {
       setResults(newResults)
     }
   }, [term, dropDownFilter])
+
+  
+  // let testComixId = state.comixs.map(comix => comix.id)
+  // console.log("Comix ID's", testComixId)
+  // let testComixsSold = state.carts.map(comix => comix.comix_id)
+  // console.log("Comix Sold", testComixsSold)
+  
+  // const comixsold = state.carts.find(d => d.comix_id == testComixId)
+  // console.log("Comic ID Purchased", comixsold)
+  // let comixQuantity 
+  // let noOfComixs  = results.map(comix => comix.quantity)
+  // console.log("Number In Stock XX", noOfComixs)
+  // if (testComixId === testComixsSold ){
+  //     noOfComixs = noOfComixs - 1
+  // }
+  // console.log("Number In Stock XXXX", noOfComixs)
+  // if (noOfComixs < 1) {
+  //   comixQuantity = (<div id="soldout"> SOLD OUT!!!</div>)
+  // } else {
+  //   comixQuantity = (<div>Number in Stock: {noOfComixs}</div>)
+  // }
+  // console.log("Number In Stock", {comixQuantity})
+  // console.log("State Quantity", state.quantity)
 
   const comixList = results.map(
     (comix) => (

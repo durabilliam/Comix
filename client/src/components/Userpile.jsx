@@ -47,11 +47,39 @@ export default function Userpile(props) {
   }
 
   let totalCost = comixCost + shippingCost
-  console.log("here", userPrices)
-  console.log("here2", comixCost)
 
-  console.log("total number of comics", userCount)
+  const handleClick = (event) => {
+  //   console.log("I FIRED")
+  //   event.preventDefault()
+  //   if (usercart) {
+  //     console.log("already in Comix Stack")
+  //   } else {
+  //     let cart = {
+  //       user_id: user_id,
+  //       comix_id: id
+  //     }
+  //     axios.post('/api/carts', { cart })
+  //       .then(response => {
+  //         dispatch({
+  //           type: UPDATE_CART_DATA,
+  //           carts: response.data.cart
+  //         })
+  //         window.location.href = '/userpile';
+  //       })
+  //       .catch(error => console.log('api errors:', error))
+  //   }
+  };  
 
+  let placeOrderButton
+  // if (usercart) {
+  //   addToCartButton = <div></div>
+  // } else if (user) {
+  placeOrderButton = <button onClick={handleClick} id="order" type="button" className="btn btn-danger btn">Place Your Order!!</button>
+  //} else addToCartButton = <div></div>
+
+
+
+  
   const userComixList = userComixsList.map(
     (comix) => (
       <div className='comix-container'>
@@ -85,6 +113,7 @@ export default function Userpile(props) {
               <td>{comix.Price}</td>
             </tr>))}
       </table>
+      {placeOrderButton}
     </div>
 
   

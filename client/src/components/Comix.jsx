@@ -66,11 +66,6 @@ export default function Comix(props) {
       addToCartButton = <button onClick={handleClick} id="cart" type="button" className="btn btn-danger btn">Add to Comixs Pile!!</button>
     } else addToCartButton = <div></div>
 
-  //   if (userfavs) {
-  //     favouriteImage = (<a href={`/favourites`}><img src={favouriteStamp} className="favourite-image" height="50" width="100"></img></a>)
-  //   } else {
-  //     favouriteImage = <div></div>
-  //   }
 
   };
 
