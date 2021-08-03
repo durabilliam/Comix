@@ -15,7 +15,7 @@ export default function Userpile(props) {
   for (let i = 0; i < userComixsId.length; i++) {
     userComixsList.push(state.comixs.find(res => res.id == userComixsId[i]))
   }
-
+  console.log("user comics list", userComixsList)
   let userCount = userComixsList.length
   let userPrices = userComixsList.map(comix => Number((comix.Price).replace('$', '')))
   let comixCost = userPrices.reduce((a, b) => a + b, 0)
@@ -47,10 +47,20 @@ export default function Userpile(props) {
   }
 
   let totalCost = comixCost + shippingCost
-
+  //let order = [...userComixList]
   const handleClick = (event) => {
-  //   console.log("I FIRED")
-  //   event.preventDefault()
+    console.log("Order Button FIRED")
+    console.log("user comics list", userComixsList)
+    event.preventDefault()
+    //let order = [...userComixList]
+    //let order = userComixList.map(a => ({...a}));
+    //let order = JSON.parse(JSON.stringify(userComixList));
+    // let order = [];
+    // for (var i of userComixList) {
+    //   order.push(i);
+    // }
+    let order = userComixList.slice(0);
+    console.log("order", order)
   //   if (usercart) {
   //     console.log("already in Comix Stack")
   //   } else {
