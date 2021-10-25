@@ -1,4 +1,5 @@
 # Comix
+An initial test
 
 ## Application Images
 
