@@ -1,7 +1,8 @@
 import React, { Component }from 'react'
 import axios from 'axios'
 import ComixsNavbar from './Navbar';
-//import './Register.css'
+import {Link} from 'react-router-dom'
+import './Register.css'
 
 
 
@@ -120,6 +121,7 @@ class Register extends Component {
           onChange={this.handleChange}
           />
           <button className = 'addRegisterSubmit' placeholder="submit" type="submit">Register</button>
+          <div className= 'redirect-login'>or <Link to='/login'>Login</Link></div>
         </form>
         <div className='spacer'></div>
         <div className='footer'>
