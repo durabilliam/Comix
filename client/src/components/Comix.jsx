@@ -65,7 +65,10 @@ export default function Comix(props) {
     } else if (user) {
       addToCartButton = <button onClick={handleClick} id="cart" type="button" className="btn btn-danger btn">Add to Comixs Pile!!</button>
     } else addToCartButton = <div></div>
-
+    
+    // if (user) {
+    //   addToCartButton = <button onClick={handleClick} id="cart" type="button" className="btn btn-danger btn">Add to Comixs Pile!!</button>
+    // } else addToCartButton = <div></div>
 
   };
 
