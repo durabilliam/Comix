@@ -12,6 +12,7 @@ An initial test
 5. cd client
 6. Run `npm install`
 7. Run `npm start` to start front end server
+8. Run `npm run cypress` to start Cypress testing
 
 ## Dependencies
 
@@ -21,4 +22,5 @@ An initial test
 * Google Map React 2.1.9
 * Bootstrap 5.0.1
 * Node 14.17.3
+* Cypress 7.3.0
 
