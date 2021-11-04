@@ -16,9 +16,7 @@ describe("End2End", () => {
 
   it("should seed the database", () => {
      cy.exec('pwd')
-     cy.exec('cd ../backend && rake db:reset')
-  //   cy.exec('rake db:reset').its('code').should('eq', 0)
-  //   cy.exec('cd ../*/*/integration')
+     cy.exec('cd ../backend && rake db:reset').its('code').should('eq', 0)
   });
 
   it("should visit Register Page", () => {
