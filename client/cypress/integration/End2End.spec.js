@@ -1,4 +1,4 @@
-describe("Navigation", () => {
+describe("End2End", () => {
 
   let LOCAL_STORAGE_MEMORY = {};
 
@@ -14,7 +14,12 @@ describe("Navigation", () => {
     });
   });
 
-
+  it("should seed the database", () => {
+     cy.exec('pwd')
+     cy.exec('cd ../backend && rake db:reset')
+  //   cy.exec('rake db:reset').its('code').should('eq', 0)
+  //   cy.exec('cd ../*/*/integration')
+  });
 
   it("should visit Register Page", () => {
     cy.visit("/register");
@@ -58,14 +63,14 @@ describe("Navigation", () => {
   });
 
 
-  it("should navigate to next comix", () => {
+  it("should navigate to next comix using Button", () => {
     cy.restoreLocalStorage()
     cy.contains("Next").click()
     cy.contains(".comix-name", "The Amazing Spider-Man")
     cy.saveLocalStorage();
   });
 
-  it("should navigate to previous comix", () => {
+  it("should navigate to previous comix using Button", () => {
     cy.restoreLocalStorage()
     cy.contains("Previous").click()
     cy.contains(".comix-name", "The Man Of Steel")
