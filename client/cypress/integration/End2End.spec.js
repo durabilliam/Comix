@@ -21,6 +21,7 @@ describe("End2End", () => {
 
   it("should visit Register Page", () => {
     cy.visit("/register");
+    cy.contains(".redirect-login", "Login");
   });
 
   it("should register a user", () => {
@@ -78,9 +79,29 @@ describe("End2End", () => {
   it("should add comic to cart", () => {
     cy.restoreLocalStorage()
     cy.get("#cart").click()
-    cy.contains(".comixs-title", "Kent C Straight's Comic Cart")
+    cy.contains(".total-cost > table > :nth-child(3) > :nth-child(1)", "Subtotal for 1 item:")
     cy.saveLocalStorage();
-    //cy.contains(".comixs-name", "The Man Of Steel");
+  });
+
+  it("should return to Comixs page", () => {
+    cy.restoreLocalStorage()
+    cy.get("#logopic").click()
+    cy.contains(".comixs-title", "Comic Book List")
+    cy.saveLocalStorage();
+  });
+ 
+  it("should select a 2nd Comix", () => {
+    cy.restoreLocalStorage()
+    cy.get(':nth-child(3) > .clickable-box > .comixs').click()
+    cy.contains(".comix-name", "X-Force")
+    cy.saveLocalStorage();
+  });
+
+  it("should add new comic to cart", () => {
+    cy.restoreLocalStorage()
+    cy.get("#cart").click()
+    cy.contains(".total-cost > table > :nth-child(3) > :nth-child(1)", "Subtotal for 2 items:")
+    cy.saveLocalStorage();
   });
 
 });
